@@ -4,7 +4,7 @@ import Link from "next/link";
 import Account from "../components/Account";
 import ETHBalance from "../components/ETHBalance";
 import Hexbin from "../components/Hexbin";
-import Honeycomb from "../components/Honeycomb";
+// import Honeycomb from "../components/Honeycomb";
 import TokenBalance from "../components/TokenBalance";
 import useEagerConnect from "../hooks/useEagerConnect";
 
@@ -20,28 +20,23 @@ function Home() {
   return (
     <div>
       <Head>
-        <title>next-web3-boilerplate</title>
+        <title>Attention Game</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header>
         <nav>
-          <Link href="/">next-web3-boilerplate</Link>
-
+          <Link href="/">Attention Game</Link>
           <Account triedToEagerConnect={triedToEagerConnect} />
         </nav>
       </header>
-
-      {/* <Honeycomb /> */}
-      <Hexbin />
       <main>
         <h1>
           Welcome to{" "}
           <a href="https://github.com/mirshko/next-web3-boilerplate">
-            next-web3-boilerplate
+            Attention Game
           </a>
         </h1>
-
         {isConnected && (
           <section>
             <ETHBalance />
@@ -50,6 +45,7 @@ function Home() {
           </section>
         )}
       </main>
+      <Hexbin />
 
       <style jsx>{`
         nav {

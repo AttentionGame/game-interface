@@ -8,6 +8,8 @@ import Hexbin from "../components/Hexbin";
 import TokenBalance from "../components/TokenBalance";
 import useEagerConnect from "../hooks/useEagerConnect";
 import Button from '@mui/material/Button';
+import styles from '../styles/laracon.module.scss'
+import TextArt from "../components/TextArt";
 
 const DAI_TOKEN_ADDRESS = "0x6b175474e89094c44da98b954eedeac495271d0f";
 
@@ -19,45 +21,16 @@ function Home() {
   const isConnected = typeof account === "string" && !!library;
 
   return (
-    <div>
+    <div className={`${styles.laracon} font-display`}>
       <Head>
         <title>Attention Game</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header>
-        <nav>
-          <Link href="/">🔯 Attention Game</Link>
-          {/* <Button variant="outlined" size="large"> */}
-          <Account triedToEagerConnect={triedToEagerConnect} />
-          {/* </Button> */}
-        </nav>
-      </header>
+      <Button variant="outlined">Outlined</Button>
       <main>
-        <h1>
-          Welcome to 🔯🔯🔯🔯 Attention Game
-        </h1>
-        <Link href="/account">Go to App Mint</Link>
-        {/* <Button variant="outlined" size="large">Go to App Mint</Button> */}
-        {isConnected && (
-          <section>
-
-            {/* <TokenBalance tokenAddress={DAI_TOKEN_ADDRESS} symbol="DAI" /> */}
-          </section>
-        )}
+        <h1 className="font-display">Laracon</h1>
+        <TextArt />
       </main>
-      <Hexbin />
-
-      <style jsx>{`
-        nav {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        main {
-          text-align: center;
-        }
-      `}</style>
     </div>
   );
 }

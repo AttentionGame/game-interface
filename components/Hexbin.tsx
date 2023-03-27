@@ -33,7 +33,7 @@ const Hexbin = () => {
   // (q-1, r+1, s)
   // (q+1, r-1, s)
   const [hexList, setHexList] = useState([
-    'q1,r0,s-1',
+    'q0,r0,s0',
   ])
   const [mintList, setMintList] = useState([])
   useEffect(() => {
